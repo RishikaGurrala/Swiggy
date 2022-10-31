@@ -1,0 +1,35 @@
+<!-- <p>product works!</p> -->
+
+<div class="container my-5">
+    <h1 class="mb-3">Products</h1>
+    <table class="table" >
+        <thead>
+            <tr>
+            <th>ProductId</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>IsActive</th>
+
+            <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Products of ProductList">
+                <td>{{Products.ProductId}}</td>
+                <td>{{Products.Category}}</td>
+                <td>{{Products.Name}}</td>
+                <td>{{Products.Description}}</td>
+                <td>{{Products.Price}}</td>
+                <td>{{Products.Quantity}}</td>
+                <td>{{Products.IsActive}}</td>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!ProductList || ProductList.length<=0">No Products found</p>
+</div>
