@@ -21,15 +21,15 @@ Last Name should start with Alphabet
     </div>
 
     <div class="col mb-3">
-      <label for="Username" class="form-label">Username</label>
+      <label for="Username" class="form-label">UserName</label>
       <div class="input-group has-validation">
         <input type="text" class="form-control" id="Username" aria-describedby="inputGroupPrepend" required>
-        <div class="form-text text-danger" *ngIf="Username.errors?.['required']&&(Username.touched||Username.dirty)">
-            Last Name is Required
+        <div class="form-text text-danger" *ngIf="UserName.errors?.['required']&&(UserName.touched||UserName.dirty)">
+            UserName is Required
         </div>
-<div class="form-text text-danger" *ngIf="Username.errors?.
-['pattern']&&(Username.dirty||Username.touched)">
-Last Name should start with Alphabet
+<div class="form-text text-danger" *ngIf="UserName.errors?.
+['pattern']&&(UserName.dirty||UserName.touched)">
+UserName should start with Alphabet
 </div>
       </div>
     </div>
@@ -109,13 +109,13 @@ Last Name should start with Alphabet
             max length is 15 characters 
         </div>
     </div>
-    <div class="col mb-3">
+     <div class="col mb-3">
         <label for="rpwd" class="form-label">Repeat Password</label>
         <input type="password" class="form-control" id="rpwd" formControlName="rpwd">
-    <!-- <div class="form-text text-danger" [ngStyle]="{'display':repeatpass}">
+     <!-- <div class="form-text text-danger" [ngStyle]="{'display':repeatpass}">
         Repeat password is Invalid
-    </div>  -->
-    </div>
+    </div>   -->
+    </div> 
 </div>
 
 <!-- <div class="row">
@@ -128,7 +128,7 @@ Last Name should start with Alphabet
 <div class="row">
     <div class="col-6 offset-3">
         <div class="d-grid">
-         <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+         <button type="submit"  class="btn btn-primary">Submit</button>
         </div>
     </div>
 </div>

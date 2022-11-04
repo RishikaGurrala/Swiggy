@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { UsersService } from '../Services/users.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UsersService } from '../Services/users.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  
   constructor(private login:UsersService) { }
 
   ngOnInit(): void {
@@ -33,10 +34,10 @@ export class LoginComponent implements OnInit {
           alert("Login Unsuccessfull");
         }else{
           this.isUserValid=true;
-          alert("Login Successfull");
+         this.login.setToken(res);
         }
       });
-    
   }
+  
 
 }

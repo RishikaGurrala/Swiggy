@@ -33,8 +33,8 @@ export class RegistrationComponent implements OnInit {
     }
     );
  registerSubmitted(){
-   if(this.Pwd.value==this.Rpwd.value)
-   {
+    if(this.Pwd.value==this.Rpwd.value)
+    {
      console.log(this.registerForm.valid);
      this.repeatpass='none'
      this.register.registerUser([
@@ -55,17 +55,22 @@ export class RegistrationComponent implements OnInit {
          this.displayMsg="Username already exist create new one";
          this.isAcccountCreated=false;
         }
+        else if(res=="registration failed"){
+          this.displayMsg="Account creation Failed";
+          this.isAcccountCreated=false;
+        }
         else{
           this.displayMsg="Something went wrong";
           this.isAcccountCreated=false;
         }
       })
    }
- }
+  }
+ 
     get Name():FormControl{
       return this.registerForm.get("name") as FormControl;
     }
-    get Username():FormControl{
+    get UserName():FormControl{
       return this.registerForm.get("username") as FormControl;
     }
     get Email():FormControl{
@@ -84,9 +89,9 @@ export class RegistrationComponent implements OnInit {
       return this.registerForm.get("pwd") as FormControl;
     }
     
-    get Rpwd():FormControl{
+     get Rpwd():FormControl{
     
-      return this.registerForm.get("rpwd") as FormControl;
+       return this.registerForm.get("rpwd") as FormControl;
     
       }
 
